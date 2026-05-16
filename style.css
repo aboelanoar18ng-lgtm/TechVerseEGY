@@ -1,0 +1,246 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --primary-dark:#0a0a23;
+    --dark-blue:#1a1b41;
+    --neon-cyan:#00f5ff;
+    --neon-purple:#8b5cf6;
+    --glass-bg:rgba(255,255,255,0.05);
+    --glass-border:rgba(255,255,255,0.1);
+
+    --text-color: #ffffff;
+    --bg-color: #0a0a23;
+}
+[data-theme="light"] {
+    --primary-dark: #f8fafc;
+    --dark-blue: #e2e8f0;
+    --neon-cyan: #0f415c;
+    --neon-purple: #7c3aed;
+    --glass-bg: rgba(0, 0, 0, 0.05);
+    --glass-border: rgba(0, 0, 0, 0.1);
+
+    --text-color: #111111;
+    --bg-color: #f8fafc;
+}
+
+body{
+    font-family:'Cairo',sans-serif;
+     font-family: 'Cairo', sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    overflow-x:hidden;
+}
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:20px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,0.3);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+.logo{
+    font-size:1.5rem;
+    color:var(--neon-cyan);
+    font-family:'Orbitron',sans-serif;
+}
+
+.theme-toggle{
+    padding:10px 15px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:20px;
+    color:var(--neon-cyan);
+}
+
+.hero p{
+    font-size:1.2rem;
+    margin-bottom:30px;
+}
+
+.btn{
+    padding:15px 25px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    text-decoration:none;
+    display:inline-block;
+}
+
+.btn-primary{
+    background:linear-gradient(45deg,var(--neon-cyan),var(--neon-purple));
+    color:#000;
+}
+
+.btn-secondary{
+    border:1px solid var(--neon-cyan);
+    color:var(--neon-cyan);
+}
+
+section{
+    padding:100px 5%;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:3rem;
+    color:var(--neon-cyan);
+}
+
+.rooms-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.glass-card{
+    background:var(--glass-bg);
+    border:1px solid var(--glass-border);
+    padding:30px;
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+}
+
+.room-card{
+    text-align:center;
+}
+
+.room-icon{
+    font-size:4rem;
+    margin-bottom:20px;
+    color:var(--neon-cyan);
+}
+
+.booking-form{
+    max-width:600px;
+    margin:auto;
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:10px;
+}
+
+.form-group input,
+.form-group select{
+    width:100%;
+    padding:15px;
+    border-radius:10px;
+    border:none;
+    background:#1e293b;
+    color:#fff;
+}
+
+.loading-screen{
+    position:fixed;
+    inset:0;
+    background:#000;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.loader{
+    width:70px;
+    height:70px;
+    border:5px solid #333;
+    border-top:5px solid var(--neon-cyan);
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+.cursor,
+.cursor-follower{
+    position:fixed;
+    border-radius:50%;
+    pointer-events:none;
+    z-index:9999;
+}
+
+.cursor{
+    width:15px;
+    height:15px;
+    background:var(--neon-cyan);
+}
+
+.cursor-follower{
+    width:40px;
+    height:40px;
+    border:2px solid var(--neon-cyan);
+}
+
+#particles-js{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+}
+
+#paymentModal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.7);
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.payment-box{
+    background:#111;
+    padding:25px;
+    border-radius:20px;
+    width:320px;
+    text-align:center;
+}
+
+.payment-box input{
+    width:100%;
+    padding:12px;
+    margin-top:15px;
+    border-radius:10px;
+    border:none;
+}
+
+.save-btn,
+.close-btn{
+    width:100%;
+    margin-top:10px;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}

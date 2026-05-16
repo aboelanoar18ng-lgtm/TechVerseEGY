@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TechVerse Egypt – متحف تطوّر التكنولوجيا</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-theme="dark">
+
+<!-- Loading -->
+<div class="loading-screen" id="loadingScreen">
+  <div class="loader"></div>
+</div>
+
+<!-- Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursorFollower"></div>
+
+<!-- Particles -->
+<div id="particles-js"></div>
+
+<!-- Header -->
+<header>
+  <div class="logo">TechVerse Egypt</div>
+
+  <button class="theme-toggle" id="themeToggle">
+    <i class="fas fa-moon"></i>
+  </button>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>
+      متحف تطوّر التكنولوجيا
+      <br>
+      <span>TechVerse Egypt</span>
+    </h1>
+
+    <p>
+      رحلة عبر الزمن تكشف تطور التكنولوجيا
+    </p>
+
+    <div class="cta-buttons">
+      <a href="#booking" class="btn btn-primary">
+        احجز تذكرتك
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- Booking -->
+<section id="booking">
+
+  <h2>احجز تذكرتك الآن</h2>
+
+  <form class="booking-form glass-card" id="bookingForm">
+
+    <div class="form-group">
+      <label>نوع التذكرة</label>
+
+      <select id="ticketType">
+        <option value="">اختر</option>
+        <option value="100">طالب - 100</option>
+        <option value="150">كبار - 150</option>
+        <option value="750">جنسيه اخرى - 750</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>عدد التذاكر</label>
+
+      <input type="number"
+             id="ticketCount"
+             value="1" 
+            
+             min="1">
+    </div>
+
+    <div class="form-group">
+      <label>الإجمالي</label>
+
+      <input type="text"
+             id="totalPrice"
+             readonly
+             value="0 EGP">
+    </div>
+
+    <div class="form-group">
+      <label>طريقة الدفع</label>
+
+      <select id="paymentMethod">
+        <option value="">اختار</option>
+        <option value="visa">Visa</option>
+        <option value="paypal">PayPal</option>
+        <option value="fawry">Fawry</option>
+      
+      </select>
+      <p id="paymentStatus" style="margin-top:10px; color:lime; display:none;">
+  تم الدفع بنجاح ✔️
+</p>
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+      ادفع الآن
+    </button>
+
+  </form>
+
+</section>
+
+<!-- Payment Modal -->
+<div id="paymentModal">
+
+  <div class="payment-box">
+
+    <h3>إتمام الدفع</h3>
+
+    <input type="text"
+           id="payInput"
+           placeholder="ادخل رقم الكارت أو المحفظة">
+
+    <button onclick="confirmPayment()"
+            class="btn btn-primary">
+      تأكيد
+    </button>
+
+    <canvas id="qrCode"></canvas>
+
+    <button onclick="saveQR()" class="save-btn">
+      حفظ التذكرة
+    </button>
+
+    <button onclick="closePayment()" class="close-btn">
+      إغلاق
+    </button>
+
+  </div>
+
+</div>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
